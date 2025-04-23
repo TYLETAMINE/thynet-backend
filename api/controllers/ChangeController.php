@@ -7,13 +7,7 @@ header('Access-Control-Allow-Origin: http://localhost:8080');
 require_once __DIR__ . '/../config/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $data = json_decode(file_get_contents("php://input"), true);
-    $user_id = $data['userId'];
-
-    $res = $pdo->query("SELECT * FROM messages WHERE sender = '$user_id'");
-    $chats = $res->fetchAll();
+    
+} else {
+    # code...
 }
-
-echo json_encode([
-    'chats' => $chats
-]);

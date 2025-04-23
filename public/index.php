@@ -49,9 +49,6 @@ $response = [
     'content' => $content
 ];
 
-$imageUrl = "http://localhost:3000/uploads/" . $user['icon_path'];
-$backgroundUrl = "http://localhost:3000/uploads/" . $user['bg_path'];
-
 $res = $pdo->query("SELECT * FROM friends WHERE id1 = 1 OR id2 = 1");
 $friend_ids = $res->fetchAll();
 $friends = [];

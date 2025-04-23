@@ -1,11 +1,10 @@
 <?php
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: Content-Type');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+header('Access-Control-Allow-Origin: http://localhost:8080');
 
 require_once __DIR__ . '/../config/config.php';
-session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents("php://input"), true);
@@ -16,13 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $res = $pdo->query("SELECT * FROM users WHERE login = '$login' AND password = '$password'");
     $user = $res->fetch();
 
-    if (!empty($user)) {
-        $_SESSION['auth'] = true;
-        $_SESSION['id'] = $user['id'];
-        $_SESSION['login'] = $user['login'];
-        $_SESSION['status'] = $user['status'];
+    $userId = $user['id'];
 
-        echo json_encode(['session' => $_SESSION['auth']]);
+    if (!empty($user)) {
+        echo json_encode([
+            'success' => true,
+            'userId' => $userId,
+            'userLogin' => $login
+    ]);
     } else {
         echo json_encode(['session' => false]);
     }
