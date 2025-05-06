@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="right__block"></div>
+
+        <div class="left__block"></div>
+
+        <div class="main__title">
+            <p>lounge terrace</p>
+            <p>island</p>
+        </div>
+
+        <script>
+            function redirectTo(url) {
+                window.location.href = url;
+            }
+        </script>
+
+        <div class="reserv">
+            <button onclick="redirectTo('http://localhost:3000/island/auth.php')">Забронировать стол</button>
+        </div>
+    </div>
+</body>
+
+</html>

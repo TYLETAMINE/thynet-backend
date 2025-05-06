@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100svh;
+
+    display: grid;
+    /* place-content: center; */
+    grid-template-columns: 50% 50%;
+}
+
+.right__block {
+    background: url('./source/cover_island.jpg');
+}
+
+.left__block {
+    background: url('./source/photo_island_04.jpeg');
+}
+
+.right__block,
+.left__block {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main__title {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    place-items: center;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.main__title > p:first-child {
+    font-size: 1.5em;
+}
+
+.main__title > p:last-child {
+    font-size: 8em;
+    font-weight: 600;
+}
+
+.reserv {
+    top: 70%;
+    left: 50%;
+    position: absolute;
+
+    transform: translate(-50%, 0%);
+}
+
+.left,
+.right,
+.reserv__page {
+    background-color: rgb(60, 60, 60);
+}
+
+.reserv > button {
+    cursor: pointer;
+    background-color: orange;
+    border: none;
+    border-radius: 99px;
+
+    padding: 15px 25px;
+    font-size: 16px;
+
+    transition: .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &:hover {
+        background-color: rgb(181, 118, 0);
+        color: white;
+    }
+}
+
+.reserv__page {
+    width: 100vw;
+    height: 100svh;
+
+    display: grid;
+    grid-gap: 50px;
+    place-items: center;
+    grid-template-rows: max-content max-content;
+}
+
+.table__list {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, max-content);
+
+    list-style: none;
+}
+
+.table {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+
+    display: grid;
+    place-items: center;
+
+    color: white;
+    background-color: orange;
+}
+
+.title {
+    color: white;
+    font-size: 54px;
+}
